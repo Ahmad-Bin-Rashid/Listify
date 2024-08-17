@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
-    /* --primary: #1aac83; */
-    /* --primary: #0083ff; */
     --primary: #0d6efd;
     --primary-hover: #0d3cfd;
     --green: #198754;
@@ -19,17 +17,18 @@
 
 html {
     font-family: 'Poppins', sans-serif;
-    /* color: var(--primary); */
 }
 
 body {
     min-height: calc(100vh);
-    background-color: #f5f5f5;
+    min-width:fit-content;
+    background-color: #f0f0f0;    
 }
 
 header {
-    background-color: #f5f5f5;
+    background-color: #f7f7f7;
     border-radius: 15px;
+    min-width: 100%;
 }
 
 header div {
@@ -46,12 +45,12 @@ a {
 
 main {
     margin: 0 auto;
-    padding: 10px 70px;
+    padding: 10px 50px;
     width: 100%;
     max-width: 1400px;
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 50px;
+    grid-template-columns: 2.7fr 1.3fr;
+    gap: 100px;
 }
 
 button {
@@ -60,7 +59,6 @@ button {
     border: 1px solid var(--primary);
     padding: 8px 13px;
     font-size: 1rem;
-    /* font-weight: 550; */
     cursor: pointer;
     align-items: center;
     transition: ease .3s;
@@ -77,7 +75,9 @@ button:hover {
     margin: 20px auto;
     padding: 20px;
     position: relative;
+    width: 100%;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    text-wrap: nowrap;
 }
 
 .form-input {
@@ -89,6 +89,8 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: medium;
+    letter-spacing: 1px;
 }
 
 .form-button {
@@ -110,12 +112,14 @@ button:hover {
     padding: 20px;
     position: relative;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+    text-wrap: nowrap;
 }
 
 .list-header {
     color: var(--primary);
     display: flex;
     align-items: center;
+    font-size: larger;
 }
 
 .list-header h2 {
@@ -127,7 +131,7 @@ button:hover {
     right: 20px;
     color: whitesmoke;
     background-color: var(--indigo);
-    opacity: 80%;
+    opacity: 75%;
 }
 
 .clear-button:hover {
@@ -136,56 +140,12 @@ button:hover {
 
 hr {
     margin: 10px;
+    border: 1px solid var(--primary);
+    opacity: 70%;
+    border-radius: 20px;
 }
 
-/* .newItemEntry__form {
-    display: flex;
-    gap: 0.25rem;
-    font-size: 1.5rem;
-}
-
-.newItemEntry__input {
-    width: calc(100% - (0.25rem + 48px));
-    flex-grow: 1;
-    border: 2px solid whitesmoke;
-    border-radius: 10px;
-    padding: 0.5em;
-}
-
-.newItemEntry__button {
-    background-color: transparent;
-    color: whitesmoke;
-    border: 3px dashed whitesmoke;
-    padding: 0.75em;
-}
-
-.newItemEntry__button:hover,
-.newItemEntry__button:focus {
-    color: limegreen;
-}
-
-.listContainer {
-    font-size: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-flow: column;
-    gap: 1rem;
-}
-
-.listTitle {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.listTitle__button {
-    background-color: transparent;
-    color: whitesmoke;
-    padding: 0.25em;
-}
-
-
-.listItems {
+#listItems {
     flex-grow: 1;
     display: flex;
     flex-flow: column nowrap;
@@ -193,19 +153,37 @@ hr {
 }
 
 .item {
+    font-size: large;
+    width: 100%;
     display: flex;
     align-items: center;
-    padding-top: 1em;
-    gap: 1em;
+    border-bottom: 1px solid #ddd;
+    margin: 5px 0;
+    padding: 5px;
+    gap: 2rem;
 }
 
 .item > input[type="checkbox"] {
     text-align: center;
     cursor: pointer;
+    height: 18px;
+    width: 18px;
+    accent-color: var(--primary);
+}
+
+.item > label {
+    cursor: pointer;
 }
 
 .item > input[type="checkbox"]:checked + label {
     text-decoration: line-through;
+    text-decoration-color: var(--primary-hover);
+    text-decoration-thickness: 2px;
+}
+
+.item > input[type="checkbox"]:checked {
+    background-color: var(--primary);
+    
 }
 
 .item > label {
@@ -213,16 +191,37 @@ hr {
     word-break: break-all;
 }
 
+.close-button {
+    color: #fff;
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 9px;
+    font-size: 15px;
+    opacity: 70%;
+}
+
 .item > button:hover, 
 .item > button:focus {
-    color: red;
-} */
+    opacity: 1;
+}
 
-/* @media (min-width: 768px) {
-    section {
-        padding: 1rem;
+@media screen and (max-width: 1024px) {
+    main {
+        gap: 50px;
     }
-    .newItemEntry__form {
-        gap: 0.5rem;
+}
+
+@media screen and (max-width: 890px) {
+    main {
+        gap: 10px;
     }
-} */
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        display:flex;
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+}
